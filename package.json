@@ -1,0 +1,23 @@
+{
+  "name": "reactkanban",
+  "version": "1.0.0",
+  "description": "A Kanban app developed in React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethanrubio/reactkanban.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethanrubio/reactkanban/issues"
+  },
+  "homepage": "https://github.com/ethanrubio/reactkanban#readme",
+  "devDependencies": {
+    "webpack": "^1.13.0"
+  }
+}
