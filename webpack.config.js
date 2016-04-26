@@ -20,13 +20,29 @@ const common = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        // Test expects a RegExp!
+        test: /\.css$/,
+        loaders: ['style', 'css'],
+        // Include accepts either a
+        // path or array of paths
+        // NOTE: might need to 
+        // remove node_modules
+        // and reinstall it
+        include: PATHS.app
+      }
+    ]
   }
-};
+}
 
 // Default configuration. We will return this 
 // if Webpack is called outside of npm.
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
+    devtool: 'eval-source-map',
     devServer: {
       contentBase: PATHS.build,
       // Enable history API fallback so HTML5
