@@ -28,7 +28,7 @@ const common = {
 if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devServer: {
-      contentBase: Paths.build,
+      contentBase: PATHS.build,
       // Enable history API fallback so HTML5
       // History API based routing works.
       // This is a good default that will come
