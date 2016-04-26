@@ -36,6 +36,10 @@ switch(process.env.npm_lifecycle_event) {
   case 'build':
     config = merge(
       common,
+      parts.setFreeVariable(
+        'process.env.NODE_ENV',
+        'production'
+      ),
       parts.minify(),
       parts.setupCSS(PATHS.app)
     );
