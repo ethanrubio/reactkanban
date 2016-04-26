@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,14 @@
   "homepage": "https://github.com/ethanrubio/reactkanban#readme",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "eslint": "^2.8.0",
+    "eslint-plugin-react": "^5.0.1",
+    "html-webpack-plugin": "^2.16.0",
     "npm-install-webpack-plugin": "^3.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.12.0"
+    "webpack-merge": "^0.12.0",
+    "webpack-validator": "^1.0.2"
   }
 }
