@@ -1,3 +1,4 @@
+require('react');
 var component = require('./component');
 require('./main.css');
  
