@@ -39,7 +39,7 @@ switch(process.env.npm_lifecycle_event) {
       {
         output: {
           path: PATHS.build,
-          filename: '[name].[chunkhash].js',
+          filename: '[name].js',
           // This is used to require.ensure The
           // setup will work without but
           // this is useful to set
@@ -56,7 +56,7 @@ switch(process.env.npm_lifecycle_event) {
         entries: ['react']
       }),
       parts.minify(),
-      parts.setupCSS(PATHS.app)
+      parts.extractCSS(PATHS.app)
     );
     break;
   default:
