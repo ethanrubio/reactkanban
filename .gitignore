@@ -3,4 +3,7 @@ node_modules
 .DS_Store
 ._.gitignore
 build/bundle.js
+build/app.js
+build/vendor.js
 *.log
+build/manifest.js
