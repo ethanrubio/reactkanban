@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server",
-    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache"
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --cache",
+    "stats": "webpack --profile --json > stats.json"
   },
   "repository": {
     "type": "git",

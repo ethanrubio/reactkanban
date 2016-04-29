@@ -4,3 +4,4 @@ node_modules
 ._.gitignore
 build/
 *.log
+stats.json
