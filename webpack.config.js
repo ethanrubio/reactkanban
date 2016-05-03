@@ -23,13 +23,17 @@ const common = {
     style: PATHS.style,
     app: PATHS.app
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   output: {
     path: PATHS.build,
     filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack demo'
+      title: 'Webpack/React Demo',
+      template: 'app/index.html'
     })
   ]
 }
@@ -62,6 +66,7 @@ switch(process.env.npm_lifecycle_event) {
         name: 'vendor',
         entries: ['react']
       }),
+      parts.setupJSX(PATHS.app),
       parts.minify(),
       parts.extractCSS(PATHS.style),
       parts.purifyCSS([PATHS.app])
@@ -73,6 +78,7 @@ switch(process.env.npm_lifecycle_event) {
       {
         devtool: 'eval-source-map'
       },
+      parts.setupJSX(PATHS.app),
       parts.setupCSS(PATHS.style),
       parts.devServer({
         // Customize host/port here if needed
