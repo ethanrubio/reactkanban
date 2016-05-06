@@ -36,7 +36,7 @@ const common = {
       template: 'app/index.html'
     })
   ]
-}
+};
 
 var config;
 
@@ -86,6 +86,6 @@ switch(process.env.npm_lifecycle_event) {
         port: process.env.PORT
       })
     );
-}
+};
 
 module.exports = validate(config);
