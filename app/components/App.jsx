@@ -14,7 +14,7 @@ export default class App extends React.Component {
       },
       {
         id: '11bbffc8-5891-4b45-b9ea-5c99aadf870f',
-        task: 'Do laundry'
+        task: 'Learn Scala'
       }
     ];
     
