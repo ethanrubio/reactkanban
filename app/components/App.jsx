@@ -22,18 +22,40 @@ export default class App extends React.Component {
         }
       ]
     };
+    
+    // this.addNote = this.addNote.bind(this)
   }
   
   render() {
-    
     const notes = this.state.notes;
     
     return (
       <div>
+        <button onClick={this.addNote}>+</button>
         <ul>{notes.map(note => 
           <li key={note.id}>{note.task}</li>
           )}</ul>
       </div>
     );
   }
+  
+  // experimental property intializer
+  addNote = () => {
+    this.setState({
+      notes: this.state.notes.concat([{
+        id: uuid.v4(),
+        task: 'New task'
+      }])
+    });
+  };
+  
+  // could also be written as with binding at constructor
+  // addNote() {
+  //   this.setState({
+  //     notes: this.state.notes.concat([{
+  //       id: uuid.v4(),
+  //       task: 'New task'
+  //     }])
+  //   });
+  // };
 }
