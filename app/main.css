@@ -51,3 +51,7 @@ body {
 .note:hover .delete-note {
   visibility: visible;
 }
+
+.note input {
+  max-width: 8.5em;
+}
