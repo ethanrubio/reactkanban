@@ -38,9 +38,10 @@ class NoteStore {
       }
       
       return note;
-    })
+    });
     
-    
+    // This is same as `this.setState({notes: notes})`
+    this.setState({notes});
   }
   
   delete(id) {
