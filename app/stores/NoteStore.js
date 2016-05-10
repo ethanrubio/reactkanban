@@ -40,7 +40,7 @@ class NoteStore {
       return note;
     });
     
-    // This is same as `this.setState({notes: notes})`
+    // This is same as `this.setState({notes: notes})` known as property shorthand
     this.setState({notes});
   }
   
