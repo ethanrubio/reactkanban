@@ -1,9 +1,9 @@
 import React from 'react';
-import Notes from './Notes.jsx';
 import AltContainer from 'alt-container';
 
-import NoteActions from '../actions/NoteActions';
-import NoteStore from '../stores/NoteStore';
+import Lanes from './Lanes.jsx';
+import LaneActions from '../actions/LaneActions';
+import LaneStore from '../stores/LaneStore';
 
 export default class App extends React.Component {
   
@@ -13,40 +13,22 @@ export default class App extends React.Component {
     return (
       <div>
         <button 
-          className="add-note"
-          onClick={this.addNote}>+</button>
+          className="add-lane"
+          onClick={this.addLane}>+</button>
         <AltContainer
-          stores={[NoteStore]}
+          stores={[LaneStore]}
           inject={{
-            notes: () => NoteStore.getState().notes
+            lanes: () => LaneStore.getState().lanes || []
           }}
         >
-          <Notes 
-            onEdit={this.editNote}
-            onDelete={this.deleteNote} />
+          <Lanes />
         </AltContainer>
       </div>
     );
   }
   
-  deleteNote(id, e) {
-    // avoid bubbling to edit
-    e.stopPropagation();
-    
-    NoteActions.delete(id);
-  }
-  
-  addNote() {
-    NoteActions.create({task: 'New task'});
-  }
-  
-  editNote(id, task) {
-    // don't modify if trying to set an empty value
-    if(!task.trim()) {
-      return;
-    }
-    
-    NoteActions.update({id, task});
+  addLane() {
+    LaneActions.create({name: 'New lane'});
   }
   
   // could also be written as with binding at constructor
