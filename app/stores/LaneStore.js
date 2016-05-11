@@ -24,4 +24,4 @@ class LaneStore {
   }
 }
 
-export default alt.createStore(LaneStore, 'LaneStore');
+export default alt.createStore(LaneStore, 'LaneStore')
