@@ -3,6 +3,7 @@ import React from 'react';
 import Notes from './Notes.jsx';
 import NoteActions from '../actions/NoteActions';
 import NoteStore from '../stores/NoteStore';
+import LaneActions from '../actions/LaneActions';
 
 export default class Lane extends React.Component {
   render() {
@@ -19,7 +20,7 @@ export default class Lane extends React.Component {
         <AltContainer
           stores={[NoteStore]}
           inject={{
-            notes: () => NoteStore.getState().notes || []
+            notes: () => NoteStore.getNotesById(lane.notes)
           }}
         >
           <Notes onEdit={this.editNote} onDelete={this.deleteNote} />
