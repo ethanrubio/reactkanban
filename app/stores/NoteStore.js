@@ -7,6 +7,13 @@ class NoteStore {
     this.bindActions(NoteActions);
     
     this.notes = [];
+    
+    // implement public method to accepts 
+    // an array of Note ids, and returns the 
+    // corresponding objects.
+    this.exportPublicMethods({
+      getNotesByIds: this.getNotesByIds.bind(this)
+    });
   }
   
   create(note) {
@@ -51,6 +58,20 @@ class NoteStore {
     this.setState({
       notes: this.notes.filter(note => note.id !== id)
     });
+  }
+  
+  getNotesByIds(ids) {
+    // 1. make sure that we are operating over an array
+    // and map over ids
+    // [id, id, id...] -> [[Note], [], [Note], ...]
+    return (ids || []).map(
+      // 2. extract matching notes
+      // [Note, Note, Note] -> [Note, ...] (match) or 
+      // [] (no match)
+      id => this.notes.filter(note => note.id === id)
+      // 3. filter out possible empty arrays and get notes
+      // [[Note], [], [Note]] -> [[Note], [Note]] -> [Note, Note]
+    ).filter(a => a.length).map(a => a[0]);
   }
 }
 
