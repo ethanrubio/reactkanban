@@ -10,6 +10,7 @@ export default function(alt, storage, storeName) {
     console.error('Failed to bootstrap data', e);
   }
   
+  // localStorage.setItem('debug', 'true') to not store the data
   finalStore.listen(() => {
     if (!storage.get('debug')) {
       storage.set(storeName, alt.takeSnapshot());
