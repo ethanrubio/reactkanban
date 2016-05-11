@@ -38,14 +38,23 @@ export default class Lane extends React.Component {
     NoteActions.update({id, task});
   }
   
-  addNote() {
-    NoteActions.create({task: 'New task'});
+  addNote = (e) => {
+    const laneId = this.props.lane.id;
+    const note = NoteActions.create({task: 'New task'});
+    
+    LaneActions.attachToLane({
+      noteId: note.id,
+      laneId
+    });
   }
   
-  deleteNote(id, e) {
+  deleteNote = (noteId, e) => {
     // avoid bubbling to edit
     e.stopPropagation();
     
+    const laneId = this.props.lane.id;
+    
+    LaneActions.detachFromLane({laneId, noteId});
     NoteActions.delete(id);
   }
 }
