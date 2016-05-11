@@ -9,7 +9,7 @@ export default class Lane extends React.Component {
     const {lane, ...props} = this.props;
     
     return (
-      <div {..props}>
+      <div {...props}>
         <div className="lane-header">
           <div className="lane-add-note">
             <button onClick={this.addNote}>+</button>
