@@ -16,7 +16,7 @@ class LaneStore {
     
     // if notes aren't provided
     // default to empty array
-    lanes.notes = lane.notes || [];
+    lane.notes = lane.notes || [];
     
     this.setState({
       lanes: lanes.concat(lane)
