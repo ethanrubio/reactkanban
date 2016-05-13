@@ -1,5 +1,6 @@
 body {
   background: cornsilk;
+  
   font-family: sans-serif;
 }
 
@@ -9,10 +10,13 @@ body {
   margin: 1em;
 
   background-color: #efefef;
+  
   border: 1px solid #ccc;
+  
   border-radius: 0.5em;
 
   min-width: 10em;
+  
   vertical-align: top;
 }
 
@@ -25,6 +29,7 @@ body {
   background-color: #333;
 
   border-top-left-radius: 0.5em;
+  
   border-top-right-radius: 0.5em;
 }
 
@@ -34,7 +39,9 @@ body {
 
 .lane-add-note {
   float: left;
+  
   color: black;
+  
   margin-right: 0.5em;
 }
 
@@ -53,6 +60,7 @@ body {
   cursor: pointer;
 
   background-color: #fdfdfd;
+  
   border: 1px solid #ccc;
 }
 
@@ -62,12 +70,15 @@ body {
   cursor: pointer;
 
   color: white;
+  
   background-color: rgba(0, 0, 0, 0);
+  
   border: 0;
 }
 
 .add-note {
   background-color: #fdfdfd;
+  
   border: 1px solid #ccc;
 }
 
@@ -81,9 +92,11 @@ body {
 
 .note {
   margin-bottom: 0.5em;
+  
   padding: 0.5em;
   
   background-color: #fdfdfd;
+  
   box-shadow: 0 0 0.3em 0.3em rgba(0, 0, 0, 0.3);
 }
 
@@ -104,6 +117,7 @@ body {
   padding: 0;
   
   background-color: #fdfdfd;
+
   border: none;
   
   cursor: pointer;
